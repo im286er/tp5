@@ -11,7 +11,7 @@
 /**
  * @name $config 系统配置文件
  */
-$config = require '../config.php';
+$config = require APP_PATH . '../../config.php';
 $array =  [
     // +----------------------------------------------------------------------
     // | 应用设置
@@ -131,7 +131,7 @@ $array =  [
         'taglib_begin' => '<',
         // 标签库标签结束标记
         'taglib_end'   => '>',
-        'view_base' => '../template/'
+        'view_base' => APP_PATH . '../../template/'
     ],
 
     // 视图输出字符串内容替换

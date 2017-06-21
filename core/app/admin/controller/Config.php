@@ -13,7 +13,7 @@ class Config extends Admin
     public function conf()
     {
         $id           = $this->request->param('id','web','trim');
-        $config       = require '../config.php';	//网站配置
+        $config       = require APP_PATH . '../../config.php';	//网站配置
         if(file_exists(APP_PATH . 'admin/config.php')) {
             $config_admin = require APP_PATH . 'admin/config.php';	//后台分组配置
         }
@@ -39,9 +39,9 @@ class Config extends Admin
             $config_new = array();
             switch ($k) {
                 case 'con':
-                    $config_old = require '../config.php';
+                    $config_old = require APP_PATH  . '../../config.php';
                     if(is_array($c)) $config_new = array_merge($config_old,$c);
-                    arr2file('../config.php',$config_new);
+                    arr2file(APP_PATH  . '../../config.php',$config_new);
                     break;
 
                 case 'con_admin':
@@ -92,13 +92,6 @@ class Config extends Admin
             if(!is_dir($dir)){
                 mkdirss($dir);
             }
-        }
-
-        if(isset($con['app_debug'])) {
-            $con['app_debug'] = (bool)$con['app_debug'];
-        }
-        if(isset($con['app_trace'])) {
-            $con['app_trace'] = (bool)$con['app_trace'];
         }
 
         if(isset($con_home)){
