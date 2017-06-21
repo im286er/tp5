@@ -61,11 +61,11 @@ class Login extends Admin
                 if($location['country'] && $location['country']!='CZ88.NET') $data['last_location'].=$location['country'];
                 if($location['area'] && $location['area']!='CZ88.NET') $data['last_location'].=' '.$location['area'];
             }
-            $data['id']	=	$authInfo['id'];
+
             $data['last_login_time']	=	time();
             $data['last_login_ip']	=	$this->request->ip();
 
-            $User->update($data);
+            $User->where(['id' => $authInfo['id']])->update($data);
             // 缓存访问权限
             RBAC::saveAccessList($authInfo['id']);
             return redirect('Index/index');
