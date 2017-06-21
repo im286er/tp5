@@ -15,32 +15,30 @@ CMS管理系统
 	5 后台帐号密码 admin admin
 	6 后台菜单设置方法请参考已有的那些菜单
 ```
-
-
 [ 目录结构 ]
-    project     		  应用部署目录
-	|-core      		  系统核心
-    |  ├app      		  应用目录
-	   | ├admin  		  后台模块
-	   |  ├config.php     模块配置文件
-	   |  ├common.php     模块函数文件
-	   |  ├controller     控制器目录
-	   |  ├model     	  模型目录
-	   | ├common     	  公共模块目录
-	   | ├home            前台模块
-	   | ├common.php      项目公共函数文件
-	   | ├database.php    数据库配置文件
-	   | ├define.php      项目路径常量配置文件
-	|  ├extend            项目公共函数文件目录
-    |-public              WEB 部署目录（对外访问目录）
-	|  ├static      	  静态资源存放目录(css,js,image)
-	|  ├index.php        系统入口文件
-    |-runtime             系统缓存目录
-	|-template            项目模板目录
-	|  ├admin      	 	  后台模板目录
-	|  ├home      	 	  前台模板目录
-	|-cms.sql             数据库文件
-	|-config.php          网站配置文件
+    project               应用部署目录
+    ├─core                系统核心
+    │  ├─app             应用目录
+    │  │  ├─admin         后台模块
+    │  │  ├─config.php     模块配置文件
+    │  │  ├─common.php     模块函数文件
+    │  │  ├─controller     控制器目录
+    │  │  ├─model        模型目录
+    │  │  ├─common        公共模块目录
+    │  │  ├─home            前台模块
+    │  │  ├─common.php      项目公共函数文件
+    │  │  ├─database.php    数据库配置文件
+    │  │  ├─define.php      项目路径常量配置文件
+    │  ├─extend            项目公共函数文件目录
+    │  ├─public              WEB 部署目录（对外访问目录）
+    │  ├─static          静态资源存放目录(css,js,image)
+    │  ├─index.php        系统入口文件
+    │  ├─runtime             系统缓存目录
+    │  ├─template            项目模板目录
+    │  ├─admin               后台模板目录
+    │  ├─home                前台模板目录
+    │  ├─cms.sql             数据库文件
+    │  ├─config.php          网站配置文件
 ```
 [ 协议 ]
 
