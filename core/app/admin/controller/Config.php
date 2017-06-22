@@ -13,15 +13,15 @@ class Config extends Admin
     public function conf()
     {
         $id           = $this->request->param('id','web','trim');
-        $config       = require APP_PATH . '../../config.php';	//网站配置
-        if(file_exists(APP_PATH . 'admin/config.php')) {
-            $config_admin = require APP_PATH . 'admin/config.php';	//后台分组配置
+        $config       = require CONF_PATH . '../config.php';	//网站配置
+        if(file_exists(CONF_PATH . 'admin/config.php')) {
+            $config_admin = require CONF_PATH . 'admin/config.php';	//后台分组配置
         }
-        if(file_exists( APP_PATH . 'home/config.php')) {
-            $config_home  = require APP_PATH . 'home/config.php';	//前台分组配置
+        if(file_exists( CONF_PATH . 'home/config.php')) {
+            $config_home  = require CONF_PATH . 'home/config.php';	//前台分组配置
         }
-        if(file_exists(APP_PATH . 'database.php')) {
-            $config_db = require APP_PATH . 'database.php';	//数据库配置
+        if(file_exists(CONF_PATH . 'database.php')) {
+            $config_db = require CONF_PATH . 'database.php';	//数据库配置
         }
 
         $this->assign('con',$config);
@@ -39,26 +39,26 @@ class Config extends Admin
             $config_new = array();
             switch ($k) {
                 case 'con':
-                    $config_old = require APP_PATH  . '../../config.php';
+                    $config_old = require CONF_PATH  . '../config.php';
                     if(is_array($c)) $config_new = array_merge($config_old,$c);
-                    arr2file(APP_PATH  . '../../config.php',$config_new);
+                    arr2file(CONF_PATH  . '../config.php',$config_new);
                     break;
 
                 case 'con_admin':
-                    $config_old = require APP_PATH . 'admin/config.php';
+                    $config_old = require CONF_PATH . 'admin/config.php';
                     if(is_array($c)) $config_new = array_merge($config_old,$c);
-                    arr2file(APP_PATH . 'admin/config.php',$config_new);
+                    arr2file(CONF_PATH . 'admin/config.php',$config_new);
                     break;
 
                 case 'con_home':
-                    $config_old = require APP_PATH . 'home/config.php';
+                    $config_old = require CONF_PATH . 'home/config.php';
                     if(is_array($c)) $config_new = array_merge($config_old,$c);
-                    arr2file(APP_PATH . 'home/config.php',$config_new);
+                    arr2file(CONF_PATH . 'home/config.php',$config_new);
                     break;
                 case 'con_db':
-                    $config_old = require APP_PATH . 'database.php';
+                    $config_old = require CONF_PATH . 'database.php';
                     if(is_array($c)) $config_new = array_merge($config_old,$c);
-                    arr2file(APP_PATH . 'database.php',$config_new);
+                    arr2file(CONF_PATH . 'database.php',$config_new);
                     break;
             }
 
@@ -88,7 +88,7 @@ class Config extends Admin
         if(isset($con['web_home_pagenum']))
             $con['web_home_pagenum']  = abs(intval($con['web_home_pagenum']));
         if(isset($con['web_adsensepath'])){
-            $dir                      = '../'.$con['web_adsensepath'];	//广告保存目录
+            $dir                      = './'.$con['web_adsensepath'];	//广告保存目录
             if(!is_dir($dir)){
                 mkdirss($dir);
             }

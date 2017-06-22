@@ -11,7 +11,7 @@
 /**
  * @name $config 系统配置文件
  */
-$config = require APP_PATH . '../../config.php';
+$config = require APP_PATH . '../config.php';
 $array =  [
     // +----------------------------------------------------------------------
     // | 应用设置

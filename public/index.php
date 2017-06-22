@@ -12,6 +12,6 @@
 // [ 应用入口文件 ]
 
 // 定义应用目录
-require '../core/app/define.php';
+require '../core/config/define.php';
 // 加载框架引导文件
 require  THINK_PATH  . 'start.php';

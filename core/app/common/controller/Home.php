@@ -1,11 +1,10 @@
 <?php
 namespace app\common\controller;
-use think\Controller;
 /**
  * 前台入口模块
  *
  */
-class Home extends Controller
+class Home extends Cms
 {
     public function _initialize()
     {
